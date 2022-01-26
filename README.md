@@ -14,7 +14,7 @@ There should be a new compiled file called <code>Vigenere</code> or <code>Vigene
 <h3>Windows Syntax</h3>
 <p><code>Vigenere.exe filename mode password</code></p>
 <h3>Linux Syntax</h3>
-<p><code>Vigeere filename mode password</code></p>
+<p><code>Vigenere filename mode password</code></p>
 
 <p>I also included the function <code>Vigenere help</code> or <code>Vigenere.exe help</code> to show the syntax in shell.</p>
 
