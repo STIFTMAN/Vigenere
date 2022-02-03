@@ -12,9 +12,9 @@ There should be a new compiled file called <code>Vigenere</code> or <code>Vigene
 
 <h2>Syntax</h2>
 <h3>Windows Syntax</h3>
-<p><code>Vigenere.exe filename mode password</code></p>
+<pre>Vigenere.exe filename mode password</pre>
 <h3>Linux Syntax</h3>
-<p><code>Vigenere filename mode password</code></p>
+<pre>Vigenere filename mode password</pre>
 
 <p>I also included the function <code>Vigenere help</code> or <code>Vigenere.exe help</code> to show the syntax in shell.</p>
 
@@ -27,11 +27,11 @@ The file will be created with all encrypted information. Warning: Existing files
 
 Test-file with password of <code>password</code>:
 
-<code>this is a test text</code>
+<pre>this is a test text</pre>
 
 Encrypted-file:
 
-<code>ihak eg r wtsl lalk</code>
+<pre>ihak eg r wtsl lalk</pre>
 </p>
 <h3>Mode 'd'</h3>
 <p>Example:<br>
@@ -41,11 +41,11 @@ The file will be created with all decrypted information. Warning: Existing files
 
 Test-file with password of <code>password</code>:
 
-<code>ihak eg r wtsl lalk</code>
+<pre>ihak eg r wtsl lalk</pre>
 
 Decrypted-file:
 
-<code>this is a test text</code>
+<pre>this is a test text</pre>
 </p>
 
 <h2>Notes</h2>
