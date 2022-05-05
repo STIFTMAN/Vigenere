@@ -19,10 +19,10 @@ There should be a new compiled file called <code>Vigenere</code> or <code>Vigene
 <p>I also included the function <code>Vigenere help</code> or <code>Vigenere.exe help</code> to show the syntax in shell.</p>
 
 <h2>Use</h2>
-<h3>Mode 'e'</h3>
+<h3>Mode '-e'</h3>
 <p>Example:<br>
 To encrypt a simple textfile, you have to write <code>Vigenere.exe test.txt e password</code> in your shell.<br>
-The given file of test.txt will be printed in console and the program is asking for a new filename for the encrypted file.
+The program is asking for a new filename for the encrypted file.
 The file will be created with all encrypted information. Warning: Existing files will be overwritten.
 
 Test-file with password of <code>password</code>:
@@ -33,10 +33,10 @@ Encrypted-file:
 
 <pre>ihak eg r wtsl lalk</pre>
 </p>
-<h3>Mode 'd'</h3>
+<h3>Mode '-d'</h3>
 <p>Example:<br>
 To decrypt a simple textfile, you have to write <code>Vigenere.exe test.txt d password</code> in your shell.<br>
-The given file of test.txt will be printed in console and the program is asking for a new filename for the decrypted file.
+The program is asking for a new filename for the decrypted file.
 The file will be created with all decrypted information. Warning: Existing files will be overwritten.
 
 Test-file with password of <code>password</code>:
@@ -47,6 +47,8 @@ Decrypted-file:
 
 <pre>this is a test text</pre>
 </p>
+<h3>Mode '-p'</h3>
+<p>Additional mode for '-e' or '-p' for printing the results in console. Using '-ep', '-pe' , '-dp' or 'pd'.</p>
 
 <h2>Notes</h2>
 <p>This program cannot encrypt or decrypt symbols out of this range <code>a-z</code> or <code>A-Z</code>.<br>
