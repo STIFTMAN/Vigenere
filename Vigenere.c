@@ -147,60 +147,81 @@ int encrypt(int a, int c){
 	return -1;
 }
 
+int returnMode(char string[]){
+	if(strcmp("-pe",string) == 0){
+		return 0;
+	}
+	else if(strcmp("-ep",string) == 0){
+		return 0;
+	}
+	else if(strcmp("-e",string) == 0){
+		return 1;
+	}
+	else if(strcmp("-pd",string) == 0){
+		return 2;
+	}
+	else if(strcmp("-de",string) == 0){
+		return 2;
+	}
+	else if(strcmp("-d",string) == 0){
+		return 3;
+	}
+	return -1;
+}
+
 int main(int argc, char * argv[]){
 	if(argc == 4){
 		int counterPW = 0, c;
-		char * pw = argv[3], filename[29];
+		char * pw = argv[3], filename[25];
 		FILE * file;
 		FILE * newFile;
+		int mode = returnMode(argv[2]);
+		if(mode == -1){
+			printline();
+			printf(" > No valid Mode. \n");
+			printf(" > Use 'Vigenere.exe help' for more help.\n");
+			exit(EXIT_FAILURE);
+		}
 		if(valid(pw) == -1){
 			printline();
-			printf("No valid password. Only use letters!");
+			printf(" > No valid password. Only use letters!");
 			exit(EXIT_FAILURE);
 		}
 		if((file = fopen(argv[1],"r")) == NULL){
 			printline();
-			printf("Error due oppening file. Make sure this file exists!\n");
-			printf("Use 'Vigenere.exe help' for more help.\n");
+			printf(" > Error due oppening file. Make sure this file exists!\n");
+			printf(" > Use 'Vigenere.exe help' for more help.\n");
 			exit(EXIT_FAILURE);
 		}
-		printf("File content:\n");
-		printline();
-		while((c = getc(file)) != EOF){
-			putchar(c);
-		}
-		putchar('\n');
-		fclose(file);
-		printline();
-		if(*argv[2] == 'e'){
-			printf("Choose a filename for your encrypted text file (max 25 letters):\n");
-		}
-		else if(*argv[2] == 'd'){
-			printf("Choose a filename for your decrypted text file (max 25 letters):\n");
-		}
-		else{
-			printf("Mode does not exist.\n");
-			exit(EXIT_FAILURE);
+		if(mode != 3 && mode != 1){
+			printf(" > File content:\n");
+			printline();
+			while((c = getc(file)) != EOF){
+				putchar(c);
+			}
+			putchar('\n');
+			fclose(file);
 		}
 		printline();
-		if(*argv[2] == 'e'){
-			printf("Start encryption...\n");
-		}
-		else if(*argv[2] == 'd'){
-			printf("Start decryption...\n");
-		}
+		printf(" > Choose a filename (max 25 letters):\n");
 		printline();
 		scanf("%25s", filename);
 		printline();
-		sprintf(filename, "%s%s",filename, ".txt");
+		if(mode < 2){
+			printf(" > Encrypting...\n");
+		}
+		else{
+			printf(" > Decrypting...\n");
+		}
+		printline();
 		if((newFile = fopen(filename, "w+")) == NULL){
 			printline();
-			printf("Error due oppening new file.\n");
+			printf(" > Error due oppening new file.\n");
 			exit(EXIT_FAILURE);
 		}
 		if((file = fopen(argv[1],"r")) == NULL){
 			printline();
-			printf("Failure to read file.\n");
+			printf(" > Failure to read file.\n");
 			exit(EXIT_FAILURE);
 		}
 		while((c = getc(file)) != EOF){
@@ -214,7 +235,7 @@ int main(int argc, char * argv[]){
 				if(c == -1){
 					putchar('\n');
 					printline();
-					printf("Unexpected output.\n");
+					printf(" > Unexpected output.\n");
 					exit(EXIT_FAILURE);
 				}
 				if(strlen(pw) > counterPW+1){
@@ -224,20 +245,22 @@ int main(int argc, char * argv[]){
 					counterPW = 0;
 				}
 			}
-			putchar(c);
+			if(mode != 3 && mode != 1){
+				putchar(c);
+			}
 			fprintf(newFile, "%c", c);
 		}
 		putchar('\n');
 		fclose(newFile);
 		fclose(file);
+		printline();
 		if(*argv[2] == 'e'){
-			printline();
-			printf("Encryption done!\n");
+			printf(" > Encryption done!\n");
 		}
 		else{
-			printline();
-			printf("Decryption done!\n");
+			printf(" > Decryption done!\n");
 		}
+		printline();
 		exit(EXIT_SUCCESS);
 	}
 	else{
@@ -250,8 +273,10 @@ int main(int argc, char * argv[]){
 				printf("File:\n");
 				printf("> Textfile in ANSI-Coding\n");
 				printf("Mode:\n");
-				printf("> 'e': encrypt\n");
-				printf("> 'd': decrpyt\n");
+				printf("> '-e': encrypt\n");
+				printf("> '-d': decrpyt\n");
+				printf("> '-ep' or '-pe': encrypt and print in console\n");
+				printf("> '-dp' or '-pd': decrpyt and print in console\n");
 				printline();
 				exit(EXIT_SUCCESS);
 			}
