@@ -1,27 +1,26 @@
-<h1>Vigenere</h1>
-<p>This small C-program is able to encrypt and decrypt simple textfiles using Vigenere algorithm.</p>
+# Vigenere
+This small C-program is able to encrypt and decrypt simple textfiles using Vigenere algorithm.
 
-<h2>Files</h2>
-<p>There is a C-file, containing the code and a compiled file. You can use the compiled file directly, but if there are any problems with your operating system to support this file, you can compile the C-file on your own.</p>
+## Files
+There is a C-file, containing the code and a compiled file. You can use the compiled file directly, but if there are any problems with your operating system to support this file, you can compile the C-file on your own.
 
-<h3>Compiling</h3>
-<p>I used a GNU compiler.<br>
-Write <code>gcc -Wall -Wpedantic -o Vigenere Vigenere.c</code> in your shell.<br>
-There should be a new compiled file called <code>Vigenere</code> or <code>Vigenere.exe</code>.</p>
+### Compiling
+I used a GNU compiler.
+Write <code>gcc -Wall -Wpedantic -o Vigenere Vigenere.c</code> in your shell.
+There should be a new compiled file called <code>Vigenere</code> or <code>Vigenere.exe</code>.
 
-
-<h2>Syntax</h2>
-<h3>Windows Syntax</h3>
+## Syntax
+### Windows Syntax
 <pre>Vigenere.exe filename mode password</pre>
-<h3>Linux Syntax</h3>
+### Linux Syntax
 <pre>Vigenere filename mode password</pre>
 
-<p>I also included the function <code>Vigenere help</code> or <code>Vigenere.exe help</code> to show the syntax in shell.</p>
+I also included the function <code>Vigenere help</code> or <code>Vigenere.exe help</code> to show the syntax in shell.
 
-<h2>Use</h2>
-<h3>Mode '-e'</h3>
-<p>Example:<br>
-To encrypt a simple textfile, you have to write <code>Vigenere.exe test.txt e password</code> in your shell.<br>
+## Use
+### Mode '-e'
+Example:
+To encrypt a simple textfile, you have to write <code>Vigenere.exe test.txt e password</code> in your shell.
 The program is asking for a new filename for the encrypted file.
 The file will be created with all encrypted information. Warning: Existing files will be overwritten.
 
@@ -32,10 +31,10 @@ Test-file with password of <code>password</code>:
 Encrypted-file:
 
 <pre>ihak eg r wtsl lalk</pre>
-</p>
-<h3>Mode '-d'</h3>
-<p>Example:<br>
-To decrypt a simple textfile, you have to write <code>Vigenere.exe test.txt d password</code> in your shell.<br>
+
+### Mode '-d'
+Example:
+To decrypt a simple textfile, you have to write <code>Vigenere.exe test.txt d password</code> in your shell.
 The program is asking for a new filename for the decrypted file.
 The file will be created with all decrypted information. Warning: Existing files will be overwritten.
 
@@ -46,16 +45,16 @@ Test-file with password of <code>password</code>:
 Decrypted-file:
 
 <pre>this is a test text</pre>
-</p>
-<h3>Mode '-p'</h3>
-<p>Additional mode for '-e' or '-d' for printing the results in console. Using '-ep', '-pe' , '-dp' or 'pd'.</p>
 
-<h2>Notes</h2>
-<p>This program cannot encrypt or decrypt symbols out of this range <code>a-z</code> or <code>A-Z</code>.<br>
-Make sure your textfile does not contain any other symbols. And your simple textfile should be coded in ANSI.</p>
+### Mode '-p'
+Additional mode for '-e' or '-d' for printing the results in console. Using '-ep', '-pe' , '-dp' or 'pd'.
 
-<h2>Security</h2>
-<p>If you want to encrypt files make sure that the key is very long, because its very easy to crack small ones.</p>
+## Notes
+This program cannot encrypt or decrypt symbols out of this range <code>a-z</code> or <code>A-Z</code>.
+Make sure your textfile does not contain any other symbols. And your simple textfile should be coded in ANSI.
 
-<h2>Information about Vigenere algorithm</h2>
-<p>https://en.wikipedia.org/wiki/Vigenère_cipher</p>
+## Security
+If you want to encrypt files make sure that the key is very long, because its very easy to crack small ones.
+
+## Information about Vigenere algorithm
+https://en.wikipedia.org/wiki/Vigenère_cipher
