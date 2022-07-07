@@ -48,7 +48,7 @@ Decrypted-file:
 <pre>this is a test text</pre>
 </p>
 <h3>Mode '-p'</h3>
-<p>Additional mode for '-e' or '-p' for printing the results in console. Using '-ep', '-pe' , '-dp' or 'pd'.</p>
+<p>Additional mode for '-e' or '-d' for printing the results in console. Using '-ep', '-pe' , '-dp' or 'pd'.</p>
 
 <h2>Notes</h2>
 <p>This program cannot encrypt or decrypt symbols out of this range <code>a-z</code> or <code>A-Z</code>.<br>
